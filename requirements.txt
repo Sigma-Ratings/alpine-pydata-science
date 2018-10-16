@@ -1,0 +1,7 @@
+python-dateutil
+boto3
+fuzzywuzzy
+coverage
+langdetect
+requests
+lxml
