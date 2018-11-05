@@ -26,6 +26,7 @@ RUN pip install scipy==1.1.0
 RUN pip install scikit-learn==0.19.2
 RUN pip install pandas
 RUN pip install spacy
+RUN pip install spacy_cld
 
 
 RUN pip install -r /pydata/requirements.txt
