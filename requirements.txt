@@ -5,3 +5,4 @@ coverage
 langdetect
 requests
 lxml
+camelot-py[all]
