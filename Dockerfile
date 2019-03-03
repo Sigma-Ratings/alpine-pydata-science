@@ -1,4 +1,3 @@
-FROM petronetto/pytorch-alpine
 FROM python:3.6.8-alpine3.9
 
 RUN apk update
@@ -106,6 +105,17 @@ RUN pip install spacy_cld
 RUN apk add qt-dev
 RUN pip install git+https://github.com/skvark/opencv-python.git
 ADD requirements.txt /pydata/
+
+
+RUN echo "|--> Updating" \
+    && echo "|--> Install PyTorch" \
+    && git clone --recursive https://github.com/pytorch/pytorch \
+    && cd pytorch && python setup.py install \
+    && echo "|--> Install Torch Vision" \
+    && git clone --recursive https://github.com/pytorch/vision \
+    && cd vision && python setup.py install \
+    && echo "|--> Cleaning" \
+    && rm -rf /pytorch 
 
 
 RUN pip install -r /pydata/requirements.txt
