@@ -1,6 +1,6 @@
 FROM petronetto/pytorch-alpine
 
-RUN apk update && apk upgrade
+RUN apk update
 
 RUN apk add musl-dev
 RUN apk add g++
@@ -9,7 +9,7 @@ RUN apk add gcc
 RUN apk --update add libxml2-dev libxslt-dev libffi-dev gcc musl-dev libgcc curl
 RUN apk add jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev openblas-dev
 RUN apk add ghostscript python3-tkinter
-RUN apk update && apk add --allow-untrusted make hdf5 git hdf5-dev libc6-compat --repository http://nl.alpinelinux.org/alpine/edge/testing
+RUN apk add --allow-untrusted make hdf5 git hdf5-dev libc6-compat --repository http://nl.alpinelinux.org/alpine/edge/testing
 
 RUN apk add gcc gfortran build-base wget freetype-dev libpng-dev openblas-dev
 
