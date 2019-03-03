@@ -1,14 +1,13 @@
-FROM python:3.6.8-alpine3.8
 FROM petronetto/pytorch-alpine
 
 
 RUN apk add --update make
-RUN apk add --no-cache curl
+RUN apk add curl
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh
+    apk add bash git
 
-RUN apk --no-cache add musl-dev
+RUN apk add musl-dev
 RUN apk add g++
 RUN apk add gcc
 
