@@ -1,11 +1,6 @@
 FROM petronetto/pytorch-alpine
 
-
-RUN apk add --update make
-RUN apk add curl
-
-RUN apk update && apk upgrade && \
-    apk add bash git
+RUN apk update && apk upgrade
 
 RUN apk add musl-dev
 RUN apk add g++
